@@ -2,9 +2,11 @@
 
 ## Prerequisite
 
-* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >=v1.0.1
-* aws v3.27.0 (signed by HashiCorp)
-* aws hashicorp/template v2.2.0
+| Name | Version |
+|------|---------|
+| [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) | >=v1.0.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 3.27.0 |
+| aws hashicorp/template | = v2.2.0 |
 
 
 ## Overview
@@ -36,7 +38,7 @@ aws_secret_key      = ""
 
 vpc_name            = "Transit-Service-VPC"
 
-region               = "ap-south-1"
+region              = "ap-south-1"
 
 
 ## Define CIDR, Subnets for managment and three for Inside, Outside and DMZ
@@ -51,7 +53,7 @@ inside_subnet      = "10.1.2.0/24"
 
 dmz_subnet         = "10.1.3.0/24"
 
-key_name             = ""  --> .pem key file should be generated before
+key_name           = ""  --> .pem key file should be generated before
 
 
 
@@ -66,7 +68,7 @@ https://www.cisco.com/c/en/us/products/collateral/security/adaptive-security-vir
 size                = "c5.xlarge"
 
 ASA_version         = "asav9-15-1-1"
-//Allowed Values = asav9-15-1, asav9-14-1-30, asav9-12-4-4, asav9-14-1-10, asav9-13-1-12
+//Allowed Values    = asav9-15-1, asav9-14-1-30, asav9-12-4-4, asav9-14-1-10, asav9-13-1-12
 
 asa_mgmt_ip       =     "10.1.0.10"
 
@@ -96,15 +98,13 @@ Note: Please don't delete or modify the file with the extension ".tfstate" file.
 ## To Destroy the setup and ASAv instance created through terraform.
 To destroy the instance, use the command:
      $ terraform destroy
-## Requirements
+
+## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 3.27.0 |
 
-## Providers
-
-No providers.
 
 ## Modules
 
@@ -212,7 +212,7 @@ No providers.
 | <a name="input_inside02_subnet"></a> [inside02\_subnet](#input\_inside02\_subnet) | n/a | `string` | `"10.0.30.0/24"` | no |
 | <a name="input_instances_per_az"></a> [instances\_per\_az](#input\_instances\_per\_az) | n/a | `number` | `2` | no |
 | <a name="input_internal_lb_enable"></a> [internal\_lb\_enable](#input\_internal\_lb\_enable) | n/a | `bool` | `"false"` | no |
-| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Existing SSH Key on the AWS | `string` | `"NGFW-KP"` | no |
+| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Existing SSH Key on the AWS | `string` | `` | yes |
 | <a name="input_listener_ports"></a> [listener\_ports](#input\_listener\_ports) | n/a | `map` | <pre>{<br>  "22": "TCP"<br>}</pre> | no |
 | <a name="input_mgmt01_subnet"></a> [mgmt01\_subnet](#input\_mgmt01\_subnet) | n/a | `string` | `"10.0.1.0/24"` | no |
 | <a name="input_mgmt02_subnet"></a> [mgmt02\_subnet](#input\_mgmt02\_subnet) | n/a | `string` | `"10.0.10.0/24"` | no |

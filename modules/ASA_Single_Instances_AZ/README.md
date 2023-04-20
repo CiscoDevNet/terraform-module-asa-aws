@@ -1,29 +1,30 @@
 # ASAv single instances in a AZ
 
-## Prerequisite
+## Requirements
 
-* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
-* aws v3.27.0 (signed by HashiCorp)
-* aws hashicorp/template v2.2.0
-
+| Name | Version |
+|------|---------|
+| [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) | >=v1.0.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 3.27.0 |
+| aws hashicorp/template | = v2.2.0 |
 
 ## Overview
 
-Using this Terraform template, a single instance ASA can be deployed in a new VPC with the following components: 
+Using this Terraform template, a single instance ASA can be deployed in a new VPC with the following components:
 
 - one new VPC with 4 subnets
 - Availability Zone
 - Two network security groups (one default and other one is created to allow all traffic)
 
-*Note*: It is important to change the security group to allow only the traffic from and to the specific IP address and port. 
+*Note*: It is important to change the security group to allow only the traffic from and to the specific IP address and port.
 
-- Routing table attachment to these subnets 
-- EIP attachment to the Management and Outside subnet. 
+- Routing table attachment to these subnets
+- EIP attachment to the Management and Outside subnet.
 
-The following parameters should be configured in the "terraform.tfvars" file before using the templates. 
+The following parameters should be configured in the "terraform.tfvars" file before using the templates.
 *Please note the value provided below is just an example. Please change it based on your requirements.*  
 
-Specify your access key and secret key credentials 
+Specify your access key and secret key credentials
 
 
 ## AWS Credentials to access the AWS Cloud
@@ -31,8 +32,8 @@ Specify your access key and secret key credentials
 aws_access_key      = ""
 
 aws_secret_key      = ""
-  
-## Define New VPC in a specific Region and Availability Zone 
+
+## Define New VPC in a specific Region and Availability Zone
 
 vpc_name            = "Transit-Service-VPC"
 
@@ -49,7 +50,7 @@ outside_subnet     = "10.1.1.0/24"
 
 inside_subnet      = "10.1.2.0/24"
 
-dmz_subnet         = "10.1.3.0/24" 
+dmz_subnet         = "10.1.3.0/24"
 
 key_name             = ""  --> .pem key file should be generated before
 
@@ -57,10 +58,10 @@ key_name             = ""  --> .pem key file should be generated before
 
 ## Define the Instance size of ASA and attach the interfaces and day0 configuration
 
-ASA Interfaces IP address Configurations 
-Download the ASA_startup_file and update the configurations 
+ASA Interfaces IP address Configurations
+Download the ASA_startup_file and update the configurations
 
-Please refer the below ASAv datasheet for the supported "size" 
+Please refer the below ASAv datasheet for the supported "size"
 https://www.cisco.com/c/en/us/products/collateral/security/adaptive-security-virtual-appliance-asav/datasheet-c78-733399.html?dtid=osscdc000283
 
 size                = "c5.xlarge"
@@ -78,44 +79,42 @@ asa_dmz_ip        =     "10.1.3.10"
 
 ## Deployment Procedure
 
-1) Clone or Download the Repository 
+1) Clone or Download the Repository
 2) Customize the variables in the terraform.tfvars and variables.tf (only to change the default value)
 3) Initialize the providers and modules
-     - go to the specific terraform folder from the cli 
+     - go to the specific terraform folder from the cli
         $ cd xxxx
-        $ terraform init 
- 4) Submit the terraform plan 
+        $ terraform init
+ 4) Submit the terraform plan
        $ terraform plan -out <filename>
- 5) Verify the output of the plan in the terminal, if everything is fine then apply the plan 
+ 5) Verify the output of the plan in the terminal, if everything is fine then apply the plan
         $ terraform apply <out filename generated earlier>
  6) If output is fine, configure it by typing "yes"
  7) Once if executed, it will show you the IP addresss of the management interface configured. Use this to access the ASA
 
-Note: Please don't delete or modify the file with the extension ".tfstate" file. This file maintained the current deployment status and used while modifying any parameters or while destroying this setup. 
+Note: Please don't delete or modify the file with the extension ".tfstate" file. This file maintained the current deployment status and used while modifying any parameters or while destroying this setup.
 
-## To Destroy the setup and ASAv instance created through terraform. 
+## To Destroy the setup and ASAv instance created through terraform.
 To destroy the instance, use the command:
-     $ terraform destroy 
- 
- # Disclaimer 
- <TBD>
- 
+     $ terraform destroy
 
-<!-- BEGIN_TF_DOCS -->
+ # Disclaimer
+ <TBD>
+
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) | >=v1.0.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 3.27.0 |
+| aws hashicorp/template | = v2.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_template"></a> [template](#provider\_template) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | = 3.27.0 |
 
-## Modules
-
-No modules.
 
 ## Resources
 
@@ -170,7 +169,7 @@ No modules.
 | <a name="input_enable_password"></a> [enable\_password](#input\_enable\_password) | n/a | `string` | `"P@ssw0rd!"` | no |
 | <a name="input_inside_subnet"></a> [inside\_subnet](#input\_inside\_subnet) | n/a | `string` | `"10.1.3.0/24"` | no |
 | <a name="input_instances_per_az"></a> [instances\_per\_az](#input\_instances\_per\_az) | n/a | `number` | `1` | no |
-| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Existing SSH Key on the AWS | `string` | `"NGFW-KP"` | no |
+| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Existing SSH Key on the AWS | `string` | `""` | yes |
 | <a name="input_mgmt_subnet"></a> [mgmt\_subnet](#input\_mgmt\_subnet) | n/a | `string` | `"10.1.0.0/24"` | no |
 | <a name="input_outside_subnet"></a> [outside\_subnet](#input\_outside\_subnet) | n/a | `string` | `"10.1.5.0/24"` | no |
 | <a name="input_region"></a> [region](#input\_region) | variable "aws\_access\_key" {} variable "aws\_secret\_key" {} variable "key\_name" {} | `string` | `"us-east-1"` | no |
@@ -183,5 +182,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ip"></a> [ip](#output\_ip) | ################################################################################################################################# Output ################################################################################################################################# |
+| <a name="output_ip"></a> [ip](#output\_ip) | n/a |
 <!-- END_TF_DOCS -->

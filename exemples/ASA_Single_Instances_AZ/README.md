@@ -2,9 +2,12 @@
 
 ## Prerequisite
 
-* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >=v1.0.1
-* aws v3.27.0 (signed by HashiCorp)
-* aws hashicorp/template v2.2.0
+| Name | Version |
+|------|---------|
+| [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) | >=v1.0.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 3.27.0 |
+| aws hashicorp/template | = v2.2.0 |
+
 
 
 ## Overview
@@ -97,20 +100,13 @@ Note: Please don't delete or modify the file with the extension ".tfstate" file.
 To destroy the instance, use the command:
      $ terraform destroy
 
- # Disclaimer
- <TBD>
 
-
-<!-- BEGIN_TF_DOCS -->
-## Requirements
+## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 3.27.0 |
 
-## Providers
-
-No providers.
 
 ## Modules
 

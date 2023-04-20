@@ -3,18 +3,18 @@
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) | >=v1.0.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 3.27.0 |
+| aws hashicorp/template | = v2.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_template"></a> [template](#provider\_template) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | = 3.27.0 |
 
-## Modules
-
-No modules.
 
 ## Resources
 
@@ -127,10 +127,11 @@ No modules.
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | defining the VPC CIDR | `string` | `"10.0.0.0/16"` | no |
 | <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | n/a | `string` | `"Service-VPC"` | no |
 
+
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_asa01ip"></a> [asa01ip](#output\_asa01ip) | ################################################################################################################################# Output ################################################################################################################################# |
+| <a name="output_asa01ip"></a> [asa01ip](#output\_asa01ip) | n/a |
 | <a name="output_asa02ip"></a> [asa02ip](#output\_asa02ip) | n/a |
 <!-- END_TF_DOCS -->
