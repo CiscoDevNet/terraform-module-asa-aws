@@ -159,28 +159,28 @@ To destroy the instance, use the command:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ASA_version"></a> [ASA\_version](#input\_ASA\_version) | n/a | `string` | `"asav9-15-1"` | no |
-| <a name="input_asa_dmz_ip"></a> [asa\_dmz\_ip](#input\_asa\_dmz\_ip) | n/a | `string` | `"10.1.4.10"` | no |
-| <a name="input_asa_inside_ip"></a> [asa\_inside\_ip](#input\_asa\_inside\_ip) | n/a | `string` | `"10.1.3.10"` | no |
-| <a name="input_asa_mgmt_ip"></a> [asa\_mgmt\_ip](#input\_asa\_mgmt\_ip) | n/a | `string` | `"10.1.0.10"` | no |
-| <a name="input_asa_outside_ip"></a> [asa\_outside\_ip](#input\_asa\_outside\_ip) | n/a | `string` | `"10.1.5.10"` | no |
-| <a name="input_availability_zone_count"></a> [availability\_zone\_count](#input\_availability\_zone\_count) | n/a | `number` | `1` | no |
-| <a name="input_dmz_subnet"></a> [dmz\_subnet](#input\_dmz\_subnet) | n/a | `string` | `"10.1.4.0/24"` | no |
-| <a name="input_enable_password"></a> [enable\_password](#input\_enable\_password) | n/a | `string` | `"P@ssw0rd!"` | no |
-| <a name="input_inside_subnet"></a> [inside\_subnet](#input\_inside\_subnet) | n/a | `string` | `"10.1.3.0/24"` | no |
-| <a name="input_instances_per_az"></a> [instances\_per\_az](#input\_instances\_per\_az) | n/a | `number` | `1` | no |
+| <a name="input_ASA_version"></a> [ASA\_version](#input\_ASA\_version) | Version of ASA | `string` | `"asav9-15-1"` | no |
+| <a name="input_asa_dmz_ip"></a> [asa\_dmz\_ip](#input\_asa\_dmz\_ip) | Ip address of ASA dmz interface | `string` | `"10.1.4.10"` | no |
+| <a name="input_asa_inside_ip"></a> [asa\_inside\_ip](#input\_asa\_inside\_ip) | Ip address of ASA inside interface | `string` | `"10.1.3.10"` | no |
+| <a name="input_asa_mgmt_ip"></a> [asa\_mgmt\_ip](#input\_asa\_mgmt\_ip) | Ip address of ASA mgmt interface | `string` | `"10.1.0.10"` | no |
+| <a name="input_asa_outside_ip"></a> [asa\_outside\_ip](#input\_asa\_outside\_ip) | Ip address of ASA outside interface | `string` | `"10.1.5.10"` | no |
+| <a name="input_availability_zone_count"></a> [availability\_zone\_count](#input\_availability\_zone\_count) | Number of az's | `number` | `1` | no |
+| <a name="input_dmz_subnet"></a> [dmz\_subnet](#input\_dmz\_subnet) | CIDR of dmz subnet | `string` | `"10.1.4.0/24"` | no |
+| <a name="input_enable_password"></a> [enable\_password](#input\_enable\_password) | Enable password | `string` | `"P@ssw0rd!"` | no |
+| <a name="input_inside_subnet"></a> [inside\_subnet](#input\_inside\_subnet) | CIDR of inside subnet | `string` | `"10.1.3.0/24"` | no |
+| <a name="input_instances_per_az"></a> [instances\_per\_az](#input\_instances\_per\_az) | Number of instances per az | `number` | `1` | no |
 | <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Existing SSH Key on the AWS | `string` | `""` | yes |
-| <a name="input_mgmt_subnet"></a> [mgmt\_subnet](#input\_mgmt\_subnet) | n/a | `string` | `"10.1.0.0/24"` | no |
-| <a name="input_outside_subnet"></a> [outside\_subnet](#input\_outside\_subnet) | n/a | `string` | `"10.1.5.0/24"` | no |
-| <a name="input_region"></a> [region](#input\_region) | variable "aws\_access\_key" {} variable "aws\_secret\_key" {} variable "key\_name" {} | `string` | `"us-east-1"` | no |
-| <a name="input_size"></a> [size](#input\_size) | n/a | `string` | `"c5.xlarge"` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | tags to map with resources . | `map(any)` | <pre>{<br>  "env": "dev"<br>}</pre> | no |
-| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | defining the VPC CIDR | `string` | `"10.1.0.0/16"` | no |
-| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | n/a | `string` | `"Service-VPC"` | no |
+| <a name="input_mgmt_subnet"></a> [mgmt\_subnet](#input\_mgmt\_subnet) | CIDR of mgmt subnet | `string` | `"10.1.0.0/24"` | no |
+| <a name="input_outside_subnet"></a> [outside\_subnet](#input\_outside\_subnet) | CIDR of outside subnet | `string` | `"10.1.5.0/24"` | no |
+| <a name="input_region"></a> [region](#input\_region) | Region | `string` | `"us-east-1"` | no |
+| <a name="input_size"></a> [size](#input\_size) | Size of ASA | `string` | `"c5.xlarge"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to map with resources . | `map(any)` | <pre>{<br>  "env": "dev"<br>}</pre> | no |
+| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | Defining the VPC CIDR | `string` | `"10.1.0.0/16"` | no |
+| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | Name of the VPC | `string` | `"Service-VPC"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ip"></a> [ip](#output\_ip) | n/a |
+| <a name="output_ip"></a> [ip](#output\_ip) | Ip address of ASA |
 <!-- END_TF_DOCS -->
