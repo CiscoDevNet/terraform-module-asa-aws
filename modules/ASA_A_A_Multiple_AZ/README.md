@@ -98,40 +98,40 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ASA_version"></a> [ASA\_version](#input\_ASA\_version) | n/a | `string` | `"asav9-15-1"` | no |
-| <a name="input_asa01_dmz_ip"></a> [asa01\_dmz\_ip](#input\_asa01\_dmz\_ip) | n/a | `string` | `"10.0.4.10"` | no |
-| <a name="input_asa01_inside_ip"></a> [asa01\_inside\_ip](#input\_asa01\_inside\_ip) | n/a | `string` | `"10.0.3.10"` | no |
-| <a name="input_asa01_mgmt_ip"></a> [asa01\_mgmt\_ip](#input\_asa01\_mgmt\_ip) | n/a | `string` | `"10.0.1.10"` | no |
-| <a name="input_asa01_outside_ip"></a> [asa01\_outside\_ip](#input\_asa01\_outside\_ip) | n/a | `string` | `"10.0.5.10"` | no |
-| <a name="input_asa02_dmz_ip"></a> [asa02\_dmz\_ip](#input\_asa02\_dmz\_ip) | n/a | `string` | `"10.0.40.20"` | no |
-| <a name="input_asa02_inside_ip"></a> [asa02\_inside\_ip](#input\_asa02\_inside\_ip) | n/a | `string` | `"10.0.30.20"` | no |
-| <a name="input_asa02_mgmt_ip"></a> [asa02\_mgmt\_ip](#input\_asa02\_mgmt\_ip) | n/a | `string` | `"10.0.10.20"` | no |
-| <a name="input_asa02_outside_ip"></a> [asa02\_outside\_ip](#input\_asa02\_outside\_ip) | n/a | `string` | `"10.0.50.20"` | no |
-| <a name="input_asa_size"></a> [asa\_size](#input\_asa\_size) | n/a | `string` | `"c5.2xlarge"` | no |
-| <a name="input_availability_zone_count"></a> [availability\_zone\_count](#input\_availability\_zone\_count) | n/a | `number` | `2` | no |
-| <a name="input_dmz01_subnet"></a> [dmz01\_subnet](#input\_dmz01\_subnet) | n/a | `string` | `"10.0.4.0/24"` | no |
-| <a name="input_dmz02_subnet"></a> [dmz02\_subnet](#input\_dmz02\_subnet) | n/a | `string` | `"10.0.40.0/24"` | no |
-| <a name="input_health_check"></a> [health\_check](#input\_health\_check) | n/a | `map` | <pre>{<br>  "port": 22,<br>  "protocol": "TCP"<br>}</pre> | no |
-| <a name="input_inside01_subnet"></a> [inside01\_subnet](#input\_inside01\_subnet) | n/a | `string` | `"10.0.3.0/24"` | no |
-| <a name="input_inside02_subnet"></a> [inside02\_subnet](#input\_inside02\_subnet) | n/a | `string` | `"10.0.30.0/24"` | no |
-| <a name="input_instances_per_az"></a> [instances\_per\_az](#input\_instances\_per\_az) | n/a | `number` | `2` | no |
-| <a name="input_internal_lb_enable"></a> [internal\_lb\_enable](#input\_internal\_lb\_enable) | n/a | `bool` | `"false"` | no |
+| <a name="input_ASA_version"></a> [ASA\_version](#input\_ASA\_version) | Version of ASA | `string` | `"asav9-15-1"` | no |
+| <a name="input_asa01_dmz_ip"></a> [asa01\_dmz\_ip](#input\_asa01\_dmz\_ip) | Ip address of asa01 dmz interface | `string` | `"10.0.4.10"` | no |
+| <a name="input_asa01_inside_ip"></a> [asa01\_inside\_ip](#input\_asa01\_inside\_ip) | Ip address of asa01 inside interface | `string` | `"10.0.3.10"` | no |
+| <a name="input_asa01_mgmt_ip"></a> [asa01\_mgmt\_ip](#input\_asa01\_mgmt\_ip) | Ip address of asa01 mgmt interface | `string` | `"10.0.1.10"` | no |
+| <a name="input_asa01_outside_ip"></a> [asa01\_outside\_ip](#input\_asa01\_outside\_ip) | Ip address of asa01 outside interface | `string` | `"10.0.5.10"` | no |
+| <a name="input_asa02_dmz_ip"></a> [asa02\_dmz\_ip](#input\_asa02\_dmz\_ip) | Ip address of asa02 dmz interface | `string` | `"10.0.40.20"` | no |
+| <a name="input_asa02_inside_ip"></a> [asa02\_inside\_ip](#input\_asa02\_inside\_ip) | Ip address of asa02 inside interface | `string` | `"10.0.30.20"` | no |
+| <a name="input_asa02_mgmt_ip"></a> [asa02\_mgmt\_ip](#input\_asa02\_mgmt\_ip) | Ip address of asa02 mgmt interface | `string` | `"10.0.10.20"` | no |
+| <a name="input_asa02_outside_ip"></a> [asa02\_outside\_ip](#input\_asa02\_outside\_ip) | Ip address of asa02 outside interface| `string` | `"10.0.50.20"` | no |
+| <a name="input_asa_size"></a> [asa\_size](#input\_asa\_size) | Size of ASA | `string` | `"c5.2xlarge"` | no |
+| <a name="input_availability_zone_count"></a> [availability\_zone\_count](#input\_availability\_zone\_count) | Number of az's | `number` | `2` | no |
+| <a name="input_dmz01_subnet"></a> [dmz01\_subnet](#input\_dmz01\_subnet) | CIDR of dmz01 subnet | `string` | `"10.0.4.0/24"` | no |
+| <a name="input_dmz02_subnet"></a> [dmz02\_subnet](#input\_dmz02\_subnet) | CIDR of dmz02 subnet | `string` | `"10.0.40.0/24"` | no |
+| <a name="input_health_check"></a> [health\_check](#input\_health\_check) | Health Check | `map` | <pre>{<br>  "port": 22,<br>  "protocol": "TCP"<br>}</pre> | no |
+| <a name="input_inside01_subnet"></a> [inside01\_subnet](#input\_inside01\_subnet) | CIDR of inside01 subnet | `string` | `"10.0.3.0/24"` | no |
+| <a name="input_inside02_subnet"></a> [inside02\_subnet](#input\_inside02\_subnet) | CIDR of inside02 subnet | `string` | `"10.0.30.0/24"` | no |
+| <a name="input_instances_per_az"></a> [instances\_per\_az](#input\_instances\_per\_az) | Number of instances per az| `number` | `2` | no |
+| <a name="input_internal_lb_enable"></a> [internal\_lb\_enable](#input\_internal\_lb\_enable) | Enable Internal LB | `bool` | `"false"` | no |
 | <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Existing SSH Key on the AWS | `string` | `"NGFW-KP"` | no |
-| <a name="input_listener_ports"></a> [listener\_ports](#input\_listener\_ports) | n/a | `map` | <pre>{<br>  "22": "TCP"<br>}</pre> | no |
-| <a name="input_mgmt01_subnet"></a> [mgmt01\_subnet](#input\_mgmt01\_subnet) | n/a | `string` | `"10.0.1.0/24"` | no |
-| <a name="input_mgmt02_subnet"></a> [mgmt02\_subnet](#input\_mgmt02\_subnet) | n/a | `string` | `"10.0.10.0/24"` | no |
-| <a name="input_outside01_subnet"></a> [outside01\_subnet](#input\_outside01\_subnet) | n/a | `string` | `"10.0.5.0/24"` | no |
-| <a name="input_outside02_subnet"></a> [outside02\_subnet](#input\_outside02\_subnet) | n/a | `string` | `"10.0.50.0/24"` | no |
-| <a name="input_region"></a> [region](#input\_region) | variable "aws\_access\_key" {} variable "aws\_secret\_key" {} variable "key\_name" {} | `string` | `"us-east-1"` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | tags to map with resources . | `map(any)` | <pre>{<br>  "env": "dev"<br>}</pre> | no |
-| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | defining the VPC CIDR | `string` | `"10.0.0.0/16"` | no |
-| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | n/a | `string` | `"Service-VPC"` | no |
+| <a name="input_listener_ports"></a> [listener\_ports](#input\_listener\_ports) | Listener Ports | `map` | <pre>{<br>  "22": "TCP"<br>}</pre> | no |
+| <a name="input_mgmt01_subnet"></a> [mgmt01\_subnet](#input\_mgmt01\_subnet) | CIDR of mgmt01 subnet | `string` | `"10.0.1.0/24"` | no |
+| <a name="input_mgmt02_subnet"></a> [mgmt02\_subnet](#input\_mgmt02\_subnet) | CIDR of mgmt02 subnet | `string` | `"10.0.10.0/24"` | no |
+| <a name="input_outside01_subnet"></a> [outside01\_subnet](#input\_outside01\_subnet) | CIDR of outside01 subnet | `string` | `"10.0.5.0/24"` | no |
+| <a name="input_outside02_subnet"></a> [outside02\_subnet](#input\_outside02\_subnet) | CIDR of outside02 subnet | `string` | `"10.0.50.0/24"` | no |
+| <a name="input_region"></a> [region](#input\_region) | Region | `string` | `"us-east-1"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to map with resources . | `map(any)` | <pre>{<br>  "env": "dev"<br>}</pre> | no |
+| <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | Defining the VPC CIDR | `string` | `"10.0.0.0/16"` | no |
+| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | Name of the VPC | `string` | `"Service-VPC"` | no |
 
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_asa01ip"></a> [asa01ip](#output\_asa01ip) | n/a |
-| <a name="output_asa02ip"></a> [asa02ip](#output\_asa02ip) | n/a |
+| <a name="output_asa01ip"></a> [asa01ip](#output\_asa01ip) | IP address of ASA01 |
+| <a name="output_asa02ip"></a> [asa02ip](#output\_asa02ip) | IP address of ASA02 |
 <!-- END_TF_DOCS -->
